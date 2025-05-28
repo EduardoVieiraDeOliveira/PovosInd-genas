@@ -1,0 +1,194 @@
+http://127.0.0.1:3000/index.htm<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enciclopédia de Povos Indígenas do Brasil</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f2f2f2; }
+    header { background-color: #2e7d32; color: white; padding: 20px; text-align: center; }
+    nav { background: #388e3c; display: flex; justify-content: center; gap: 15px; padding: 10px 0; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    .container { padding: 20px; max-width: 1000px; margin: auto; background: white; }
+    .povo { display: flex; gap: 20px; margin-bottom: 20px; background: #e8f5e9; padding: 10px; border-radius: 10px; }
+    .povo img { width: 150px; border-radius: 10px; }
+    .povo-info { flex: 1; }
+    .ver-detalhes { color: #1b5e20; cursor: pointer; font-size: 0.9em; margin-top: 5px; }
+    .resumo { display: none; margin-top: 10px; font-size: 0.9em; }
+    .video-container { text-align: center; margin: 40px 0; }
+    .contato-section { background: #f1f8e9; padding: 20px; border-radius: 10px; }
+    label, input, textarea, button { display: block; width: 100%; margin-bottom: 10px; }
+    footer { background: #2e7d32; color: white; text-align: center; padding: 10px; margin-top: 40px; }
+    .wiki-link { display: inline-block; margin-top: 8px; color: #2e7d32; text-decoration: underline; }
+    .verbete { margin-top: 5px; font-style: italic; }
+  </style>
+  <script>
+    function toggleResumo(id) {
+      var resumo = document.getElementById(id);
+      resumo.style.display = resumo.style.display === 'block' ? 'none' : 'block';
+    }
+    function enviarContato(event) {
+      event.preventDefault();
+      alert('Mensagem enviada com sucesso!');
+      event.target.reset();
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Enciclopédia de Povos Indígenas do Brasil</h1>
+    <p>Preservando a história, cultura e sabedoria dos povos originários</p>
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#povos">Povos</a>
+    <a href="#mapas-explicacao">Mapas</a>
+    <a href="#publicacoes-explicacao">Publicações</a>
+    <a href="#verbetes-explicacao">Verbetes</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="container" id="inicio">
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <p>Esta enciclopédia digital é dedicada a preservar e divulgar a rica diversidade cultural, histórica e social dos povos indígenas do Brasil.</p>
+      <p>Nosso objetivo é proporcionar conhecimento acessível a todos, valorizando as línguas, tradições e lutas destes povos originários.</p>
+    </section>
+
+    <section id="povos">
+      <h2>Povos Indígenas do Brasil</h2>
+      <p>O Brasil possui centenas de povos indígenas, cada um com sua língua, costumes, histórias e territórios.</p>
+
+      <div class="povo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLqc3rdNeiYi-tIB6nJkhRIz0DfbzqrJ3QHg&s" alt="Povo Munduruku" />
+        <div class="povo-info">
+          <h3>Povo Munduruku</h3>
+          <small>Tronco Tupi</small>
+          <div class="localizacao">Pará, Amazonas, Mato Grosso</div>
+          <div class="ver-detalhes" onclick="toggleResumo('munduruku')">Ver detalhes</div>
+          <div class="resumo" id="munduruku">
+            Os Munduruku são conhecidos como grandes guerreiros e defensores do território na região do rio Tapajós.
+            <div class="verbete">Verbetes: guerra, resistência, Tapajós</div>
+            <a class="wiki-link" href="https://pt.wikipedia.org/wiki/Munduruku" target="_blank">Wikipedia</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="povo">
+        <img src="https://media.istockphoto.com/id/889684434/pt/foto/indigenous-girl-from-tupi-guarani-tribe-in-manaus-brazil.jpg?s=612x612&w=0&k=20&c=NFwyt5dY_5w3bnRuqNql74Rfctm60_uEs6RwecfCi70=" alt="Povo Guarani" />
+        <div class="povo-info">
+          <h3>Povo Guarani</h3>
+          <small>Tronco Tupi</small>
+          <div class="localizacao">Sul, Sudeste, Centro-Oeste</div>
+          <div class="ver-detalhes" onclick="toggleResumo('guarani')">Ver detalhes</div>
+          <div class="resumo" id="guarani">
+            Um dos maiores povos indígenas do país, os Guarani têm uma espiritualidade forte e uma relação profunda com a terra.
+            <div class="verbete">Verbetes: espiritualidade, tekoá, rezas</div>
+            <a class="wiki-link" href="https://pt.wikipedia.org/wiki/Guarani" target="_blank">Wikipedia</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="povo">
+        <img src="https://www.geniocriador.com.br/images/blog/2023-02-24-livros-sobre-os-yanomami/livros-sobre-yanomami_1.png" alt="Povo Yanomami" />
+        <div class="povo-info">
+          <h3>Povo Yanomami</h3>
+          <small>Família Yanomami</small>
+          <div class="localizacao">Amazonas, Roraima</div>
+          <div class="ver-detalhes" onclick="toggleResumo('yanomami')">Ver detalhes</div>
+          <div class="resumo" id="yanomami">
+            Os Yanomami vivem em regiões remotas da Amazônia e mantêm complexas estruturas sociais e rituais.
+            <div class="verbete">Verbetes: xamanismo, floresta, malocas</div>
+            <a class="wiki-link" href="https://pt.wikipedia.org/wiki/Yanomami" target="_blank">Wikipedia</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="povo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Pataxohahahae.JPG" alt="Povo Pataxó Hã-Hã-Hãe" />
+        <div class="povo-info">
+          <h3>Povo Pataxó Hã-Hã-Hãe</h3>
+          <small>Tronco Macro-Jê</small>
+          <div class="localizacao">Bahia</div>
+          <div class="ver-detalhes" onclick="toggleResumo('pataxo')">Ver detalhes</div>
+          <div class="resumo" id="pataxo">
+            Conhecidos por suas festas e resistência cultural, os Pataxó mantêm viva sua língua e enfrentam desafios territoriais.
+            <div class="verbete">Verbetes: cerimônias, língua, território</div>
+            <a class="wiki-link" href="https://pt.wikipedia.org/wiki/Patax%C3%B3" target="_blank">Wikipedia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mapas-explicacao">
+      <h2>Mapas</h2>
+      <p>Mapas ajudam a visualizar onde vivem os povos indígenas no Brasil, mostrando territórios e áreas protegidas.</p>
+    </section>
+
+    <section id="publicacoes-explicacao">
+      <h2>Publicações</h2>
+      <p>Reúne artigos, entrevistas, livros e pesquisas sobre a cultura, história e línguas indígenas.</p>
+    </section>
+
+    <section id="verbetes-explicacao">
+      <h2>Verbetes</h2>
+      <h3>1. Guerra</h3>
+<p>Conflito armado ou luta entre grupos. Para povos indígenas, a guerra pode envolver a defesa do território, cultura e modo de vida contra ameaças externas, como invasões ou desmatamento.
+</p>
+<h3>2. Resistência</h3>
+<p>Ato de lutar contra opressões ou tentativas de apagar a cultura e os direitos. Os povos indígenas resistem para manter suas terras, línguas, tradições e espiritualidade vivas.
+</p>
+  <h3>3. Tapajós</h3>
+<p>Nome de um povo indígena e também de um rio na região Norte do Brasil. Os Tapajós têm uma forte ligação com o rio e a floresta, essenciais para sua sobrevivência e cultura.
+</p>
+  <h3>4. Espiritualidade</h3>
+<p>Forma de viver e entender o mundo com base na conexão com o sagrado, com a natureza e com os espíritos. Para muitos povos indígenas, tudo tem vida e espírito.
+</p>
+  <h3>5. Tekoá</h3>
+<p>Palavra do idioma Guarani que significa “lugar onde se é”. É a aldeia ou território onde o povo vive sua cultura, espiritualidade e modo tradicional de ser.
+</p>
+  <h3>6. Rezas</h3>
+<p>Orações ou cantos sagrados usados para se comunicar com os espíritos, pedir proteção, curar doenças ou agradecer à natureza.
+</p>
+  <h3>7. Xamanismo</h3>
+<p>Prática espiritual que envolve o uso de rituais, ervas e cânticos para curar e se comunicar com os espíritos. O xamã é uma figura central nesse processo, como um curandeiro ou guia espiritual.
+</p>
+  <h3>8. Floresta</h3>
+<p>Ambiente natural essencial para a vida dos povos indígenas. Fonte de alimento, remédios, moradia e espiritualidade. A floresta é viva e sagrada.
+</p>
+  <h3>9. Malocas</h3>
+<p>Casas coletivas onde vivem várias famílias indígenas. São feitas com materiais naturais, como madeira e palha, e representam união e convivência comunitária.
+</p>
+  <h3>10. Cerimônias</h3>
+<p>Rituais importantes que marcam momentos como colheitas, curas, iniciações ou celebrações espirituais. Envolvem cantos, danças, pinturas e rezas.
+</p>
+  <h3>11. Língua</h3>
+<p>Meio de expressão e transmissão da cultura. Muitas línguas indígenas estão ameaçadas, mas são essenciais para manter a identidade de cada povo.
+</p>
+  <h3>12. Território</h3>
+<p>Espaço de vida física, cultural e espiritual dos povos indígenas. O território não é só terra: é onde se caça, planta, vive, reza e ensina os mais jovens.</p>
+    </section>
+
+    <div class="video-container">
+      <h2>Documentário: Povos Indígenas do Brasil</h2>
+      <iframe width="800" height="450" src="https://www.youtube.com/embed/5A-65FjD6ro" allowfullscreen></iframe>
+    </div>
+
+    <section id="contato" class="contato-section">
+      <h2>Contato</h2>
+      <form onsubmit="enviarContato(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+  <footer>
+    <p>© 2025 Enciclopédia de Povos Indígenas do Brasil — Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
